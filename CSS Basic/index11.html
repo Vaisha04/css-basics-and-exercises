@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position Property</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            height: 433px;
+            width: 80vw;
+            padding: 3px;
+            margin: 3px;
+            border: 2px solid black;
+        }
+
+        /* position static is by default property of CSS
+           where no changes happened
+           It does not have top bottom left right 
+           beside static other postion like relative, absolute, fixed, sticky has top bottom left right*/
+
+        .box1 {
+            background-color: aqua;
+            /* position: relative;
+            z-index: 1; */
+            /* If we want to overlap box1 on box2 use z-index
+            for z-index you have to use relative first */
+            /* If box1 has greater value of z-index than other boxes then it will be on top and 
+            if box1 has less value of z-index than other boxes it will be on bottom of other boxes  */
+
+
+            position: absolute;
+            top: 0px;
+            /* absolute happened considering nearest position element
+            if there is no position elemet it consider html tag(there is nothing above html tag because)
+            In absolute position box1 will not move from its postion 
+            here we make parent(div) as position element hence box1 will be postion according to this*/
+
+            /* position: sticky;
+            top: 0px;
+            height: 111px;
+            width: 100%;
+            margin: 0;
+            padding: 0; */
+            /* It's sticky on its postion means it will stay on that postion only*/
+            /* sticky postion use for example navbar */
+        }
+
+        .box2 {
+            background-color: azure;
+            /* position: relative; */
+            /*  top: 34px;
+            left: 56px; */
+            /* relative move box in top bottom left and right
+               if we write top 45px then it will move downward on webpage
+               if we write top -45px then it will move upward on webpage because of this box2 get overlap with box1 */
+        }
+
+        .box3 {
+            background-color: antiquewhite;
+            /* position: fixed;
+            bottom: 0px;
+            left: 25vw;
+            height: 133px; */
+            /* It will choose height of box3 rather than box 
+            Because box3 is very special(highest priority) than box*/
+            /* It will be fixed no matter what on that position even if we scroll*/
+            /* fixed postion use for example popup notifications or cookie banners */
+        }
+
+        .box4 {
+            background-color: purple;
+        }
+
+        .parent {
+            /* Exception : transfrom, filter, or perspective properties can also make an element appear as postion element (any one of them)*/
+            /* transform: translate(0); */
+            /* filter: invert(0); */
+            /* perspective: 0em; */
+
+            padding: 3px;
+            margin: 34px;
+            border: 3px solid purple;
+
+            /* position: absolute; */
+            /* It can become a position element even if we write absolute, fixed, sticky, relative  */
+            /*  here we make parent(div) as position element hence box1 will be postion according to this */
+        }
+
+        /* Differenec between fxied and sticky is
+        fixed keeps an elements permanently fixed to the viewport while (Is does not depend on parent)
+        sticky scrolls normally first and then sticks to a specified postion within its parent when reached */
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+    </div>
+</body>
+
+</html>

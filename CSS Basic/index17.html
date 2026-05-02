@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid 1</title>
+    <style>
+        .container {
+            border: 2px solid black;
+            display: grid;
+            height: 100vh;
+            /* It display rows and columns */
+
+            /* grid-template-columns: 120px 100px; */
+            /* It make first column 120px and second column 100px
+            Because of this grid divided between two columns */
+
+            /* we can even give name to it (above syntax) */
+            /* grid-template-columns: [pehla]120px [doosra]100px [t]; */
+
+            /* grid-template-rows: 100px 100px 100px; */
+            /* It decided rows px */
+
+            /* grid-template-columns: 1fr 2fr 1fr; */
+            /* It shows size of boxes where 2fr boxes is twice of 1fr */
+
+            /* grid-template-columns: repeat(4, 1fr); */
+            /* It will repeate 1fr four times */
+
+            /* grid-template-columns: repeat(4, minmax(100px, 1fr)); */
+            /* Here minimum is 100px and maximum is 1fr */
+
+             grid-template-columns: repeat(4,40px);
+             /* here boxes(items) will come out of container */
+             justify-content: center;
+             /* Justify center use when we have to align content(boxes) within container */
+
+             /* Justify-items aligns items inside their own grid cells,
+             while justify-content aligns the entire grid within the container */
+
+            /* gap: 34px; */
+            row-gap: 10px;
+            column-gap: 44px;
+            justify-items: center;
+            align-items: center;
+            /* It aligns grid or flex items vertically (along the cross-axis) inside their container */
+        }
+
+        .items {
+            border: 2px solid red;
+            height: 55px;
+            width: 55px;
+        }
+
+        .item-4 {
+            /* After giving name we can write like below also */
+            /* grid-row: pehla/t; */
+            /* grid-row: 1/2;
+            grid-column: 1/2; */
+            /* Because of this box1 position get to box 4 (top-left)
+            and box 1 get shift */
+        }
+
+        .item-1 {
+            /* grid-row: 1/2;
+            grid-column: 1/2; */
+            /* Here item1 and item4 has same property hence now both box1 and box4 will overlap with each other */
+            /* This is 2nd way to write */
+            /* grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 1;
+            grid-column-end: 2; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="items item-1">1</div>
+        <div class="items">2</div>
+        <div class="items">3</div>
+        <div class="items item-4">4</div>
+        <div class="items">5</div>
+    </div>
+</body>
+
+</html>

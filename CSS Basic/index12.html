@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables</title>
+    <style>
+        /* Local Variable has highest priority than Global Variable */
+
+        /* In CSS we can make Global Variable using root*/
+        :root {
+            --color: aqua;
+            --seccolor: rgb(185, 252, 252);
+            --defpad: 23px;
+            --defop:0.5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* div:first-child {
+            background-color: aqua;
+        } */
+        /* Don't have to do this if you right class to div */
+
+        .nav {
+            background-color: var(--color);
+        }
+
+        ul {
+            display: flex;
+        }
+
+        ul li:first-child {
+            /* In CSS we can also make Local Variable */
+            --color: rgb(153, 153, 250);
+            background-color: var(--color, blue);
+            /* If there is no color variable then it will choose blue */
+        }
+
+        ul li {
+            list-style: none;
+            padding: var(--defpad);
+            border: 2px solid var(--seccolor);
+            opacity: var(--defop);
+        }
+
+        .container {
+            background-color: var(--seccolor);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis impedit fugit necessitatibus sequi at, dolores,
+        asperiores, quam quibusdam aliquam a quae consequuntur saepe. Minus voluptatem id facere quos autem. Eius ipsa
+        sunt, eos optio porro dolorem hic id consectetur. Facere molestiae exercitationem delectus totam necessitatibus.
+    </div>
+</body>
+
+</html>

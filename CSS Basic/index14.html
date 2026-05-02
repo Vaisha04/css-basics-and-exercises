@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Float & Clear</title>
+    <style>
+        /* Floats 
+        Here normally one side has img and other side has content/text
+        like newspaper article */
+
+        /* Clear
+        Here it cancel float of img  */
+        .cards {
+            border: 2px solid black;
+            display: flow-root;
+            /* Beacause of this img fixed in its box/container */
+        }
+
+        img {
+            float: left;
+        }
+
+        .card {
+            border: 2px solid red;
+        }
+
+        .card:nth-child(3){
+            background-color: aqua;
+            clear: right;
+            /* Because of this (clear) our 3rd div content start from below of img */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cards">
+        <img src="C:\Users\swati\Desktop\boat1.avif" width="230px">
+        <div class="card">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dignissimos impedit totam quos laboriosam ad
+            nobis architecto sit, facere ipsum cupiditate est dicta obcaecati error repellat doloremque tempore
+            quibusdam mollitia eius nam repudiandae natus.
+        </div>
+        <div class="card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim optio maiores, atque nobis quo
+            dolor ut at voluptates architecto in blanditiis neque itaque nihil quia voluptate omnis consectetur
+            molestiae. Molestias consequatur ratione in odit qui, porro eum rerum doloremque voluptatibus quidem dolores
+            nesciunt accusantium debitis aliquid nihil hic amet voluptates sapiente ab quis ad praesentium natus?
+        </div>
+        <div class="card">Card 3</div>
+    </div>
+</body>
+
+</html>

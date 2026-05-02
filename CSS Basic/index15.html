@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More on CSS Selector</title>
+    <style>
+        /* Box color become red */
+        /* .box:first-child {
+            background-color: red;
+        } */
+
+        /* Box line (first) become yellow */
+        /* .box::first-line {
+            color: green;
+        } */
+
+        .boxes * {
+            color: blue;
+            border: 2px solid black;
+        }
+
+        /* Attribute Selector */
+        /* [data-color="primary"] {
+            padding-top: 45px;
+            ;
+        }
+        */
+
+        /* Grouping of Selector*/
+        /* p, a, .box, [data-color="primary"] {
+            padding-top: 45px;
+        } */
+
+        /* It start calculating from 1 */
+        /* .box:nth-child(even){
+            background-color: blue;
+        } */
+
+        /* It start from last/bottom */
+        .box:nth-last-child(1) {
+            background-color: red;
+        }
+
+        /* It called Pseudo element */
+        /* It insert element dynamically in CSS
+        means before boxes content this containt will display on web page */
+        .boxes::before {
+            content: "Harry is good";
+            color: blue;
+        }
+
+        /* It called Pseudo element */
+        /* It insert element dynamically in CSS
+        means after boxes content this containt will display on web page */
+        .boxes::after {
+            content: "Web Design";
+            color: red;
+        }
+
+        /* This style applied to selected text
+        When we select text through cursor on web page */
+        .boxes::selection{
+            color: aqua;
+            background-color: black;
+        }
+
+        /* This style given to first letter */
+        .box::first-letter{
+            color: peru;
+            font: size 45px;
+        }
+
+        input::placeholder{
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="boxes">
+        <div data-color="primary" class="box">Hey I am box Lorem ipsum dolor sit, amet consectetur adipisicing elit. In
+            error nostrum eos
+            ullam nobis! Enim aliquam maiores repellat blanditiis consectetur quisquam iste unde sequi ad sapiente.
+            Laborum nemo est quis nam
+        </div>
+        <div class="box">Hey I am box</div>
+        <div class="box">Hey I am box</div>
+        <input type="text" placeholder="Type your name here">
+    </div>
+</body>
+
+</html>

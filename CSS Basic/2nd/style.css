@@ -1,0 +1,15 @@
+/* What is CSS?
+CSS stands for Cascading Style Sheets.
+It is a stylesheet language that is used to describe the visual presentation of web page written in HTML(Hypertext Markup Language).
+HTML creates the structure of the page, while CSS adds styling to that structure */
+
+/* There are 3 ways to add CSS to HTML 
+Inline CSS - This is used in a HTML page using style attributes.
+Internal CSS - It means to add a style tag and place the HTML page's style within it.
+Extenrnal CSS - It means to create a .css file and place all your styles inside that .css file*/
+
+/* External CSS code */
+  h1 {
+            background-color: red;
+            color: yellow;
+        }

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox</title>
+    <style>
+        .container {
+            border: 2px solid red;
+            display: flex;
+            /* It means you have to use flex property
+            before applying flex our all item box will be vertical display (default)
+            after applying flex its become horizontal because its default property of flex */
+
+            height: 80vh;
+
+            /* justify-content: center; */
+            /* It become center (line) */
+
+            /* align-items: center; */
+            /* It use when we have single line */
+            /* It become center (container-box) */
+
+            /* flex-direction: column; */
+            /* It will arrange all item box in column [1 2 3 4] */
+
+            /* flex-direction: column-reverse; */
+            /* It will arrange all item box in column in reverse order of box [4 3 2 1]*/
+
+            flex-wrap: wrap;
+            /* It will wrap boxex like in photo gallery of phone */
+
+            /* align-content: center; */
+            /* It use when we have multiple lines */
+            /* All content (boxes) it will come in center */
+
+            /* There is no justify-items in flexbox; */
+
+            flex-flow: row wrap;
+            /* It set flex direction (row) and flex wrap (wrap) */
+
+            /* gap: 30px; */
+            /* It define gap between (boxes) items
+            we don't need margin if we use gap
+            we can define row gap and column gap separately also 
+            there are two ways to write that*/
+            /* row-gap: 40px;
+            column-gap: 10px; */
+            /* First come row then column */
+            gap: 40px 10px;
+        }
+
+        .item {
+            flex-grow: 1;
+            /* All item(boxes) in one line will contain all space of line equally */
+            /* Flex grow property defines how much a flex item will grow relative to other items inside a flex container 
+            when there is extra space, where the default value is 0(no growing) */
+            height: 32px;
+            width: 32px;
+            background-color: blueviolet;
+            border: 2px solid black;
+            /* margin: 4px; */
+        }
+
+        .order-1 {
+            order: 1;
+        }
+
+        .order-2 {
+            order: 2;
+        }
+
+        .order-3 {
+            order: 3;
+        }
+
+        /* order property control the visual order of items, where lower values appear first and the default value is 0 */
+
+        .item1 {
+            flex-grow: 2;
+            /* All item(boxes) in one line will contain all space of line equally 
+             except item1 class box it will take twice of size of other box*/
+
+            /* flex-shrink: 2; */
+            /* It will shrink twice as fast (or twice as much) as an item with */
+            /* Flex shrink property defines how much a flex item will shrink relative to other items inside a flex container 
+             when there is not enough space, and the default value is 1(it can shrink) */
+
+            align-self: flex-end;
+            /* This item(only this box) will be at end of container */
+            /* align self property is used in flexbox or grid to align a single item individually along the cross axis 
+             overriding the container's align items property */
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="item order-2 item1">1</div>
+            <div class="item">2</div>
+            <div class="item order-3">3</div>
+            <div class="item order-1">4</div>
+            <!-- In order property the boxex which does not mention order consider default value 0
+             hence it comes first after that order property boxes come
+             here 4 has order value 1 which is low hence it come first (after all boxex which does not have order)
+             then 1 will come because it have high order value than 4 which is 2
+             last will be a 3 because it order value is high which is 3-->
+            <div class="item">5</div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>

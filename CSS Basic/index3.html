@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Boxmodel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            background-color: aqua;
+        }
+
+        /* Box module include margin,border,padding,content but element size include border,padding,content only.It does not include margin  */
+        .box1 {
+            color: rgb(242, 64, 203);
+            padding: 10px;
+            margin: 25px;
+            border: 2px solid blue;
+            height: 100px;
+            /* It means height does not include padding, border, content. It is sepearatly include.Hence box size is bigger*/
+            box-sizing: border-box;
+            /* After applying this height include padding, border, content. Hence box size get drop means it become smaller */
+        }
+
+        .box2 {
+            color: red;
+            padding: 10px;
+            margin: 25px;
+            border: 2px solid black;
+            height: 100px;
+            box-sizing: border-box;
+        }
+    </style>
+    <!-- Margin Collapse - If two elements margin get collapse with each other then it apply only maximum margin -->
+</head>
+
+<body>
+    <div class="box box1">I am a box</div>
+    <div class="box box2">I am another box</div>
+</body>
+
+</html>

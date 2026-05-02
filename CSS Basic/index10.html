@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Overflow Property</title>
+    <style>
+        .box {
+            width: 20vw;
+            height: 20vh;
+            border: 2px solid black;
+            /* overflow: scroll; */
+            overflow: auto;
+            /* If text become overflow it automatically generate scroll bar */
+            /* white-space: nowrap; */
+            /* text seen only horizontally */
+            /* text-overflow: ellipsis; */
+            /* we see dot beside text */
+            /*  overflow-x: hidden;
+            overflow-y: scroll; */
+            /* It's first way to write x and y overflow */
+            overflow: hidden auto;
+            /* It's second way to write x and y overflow */
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- CSS Box Model
+     It defines how elemnts are rendered nd how their dimensions are calculated. 
+     It describes the structure of an element as a rectangular box that has content, padding, a border and a margin -->
+    <div class="box">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia consequatur eius repudiandae ducimus voluptas
+        veritatis quis culpa, qui, sint a doloribus velit nulla fugiat error non porro nobis cupiditate odio ut.
+        Voluptates rerum voluptatum sit placeat aliquam, labore molestias laborum at molestiae incidunt atque fugiat
+        quasi quidem suscipit aspernatur expedita, cupiditate non quo tenetur! Officia, voluptate?
+    </div>
+</body>
+
+</html>

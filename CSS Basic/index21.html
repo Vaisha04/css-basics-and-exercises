@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Object-fit and Object-position</title>
+    <style>
+        .container {
+            height: 634px;
+            width: 688px;
+            border: 2px solid black;
+            /* background-color: azure; */
+
+            /* background-position: top right; */
+            background-position: center center;
+
+            background-image: url(photo.jpg);
+
+            /* background-repeat: no-repeat; */
+            /* If your image is small and it is repeated then use this property
+           You can also use x-repeat(It will only repeat in x)
+            and y-repeat(It will only repeat in y)  */
+
+            background-clip: border-box;
+            /* background-clip defines how far the background extends inside an element
+            border-box means the bg extends behind the border,padding and content
+            padding-box means the bg extends only behind the padding and content,not the border
+            content-box menas the bg appears only behind the content area, not the padding or border */
+
+        }
+
+        img {
+            /* width: 466px;
+            height: 488px; */
+            /* object-fit: cover; */
+            /* This will cover img style width and height here
+            Because of cover img can be cut */
+
+            /* object-fit: contain; */
+            /* This will cover img style width and height here
+            Without cutting any part of img 
+            but because of this some space will remain to cover(height and width) */
+
+            /* object-fit: fill; */
+            /* It is default property
+            It will cover all img but img will be in distored from */
+
+            /* object-fit: scale-down; */
+            /* It value makes the img scale down to fit inside the container
+            While keeping its aspect ratio, but it will not become larger than its original size */
+
+            /* object-position: top right; */
+            /* This tell us which portion of img should be display 
+               It will remove or cut other portion if img is not fitting in box(img style) */
+
+            /* object-position: 10px 20px; */
+            /* It will postioned 10px from left and 20px from top */
+            /* Above are two methods two show object-postion */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Object-fit defines how an image or video fits inside its container
+     Object-postion defines the postion of image inside the container -->
+    <div class="container">
+        <!-- <img src="photo.jpg"> -->
+    </div>
+</body>
+
+</html>

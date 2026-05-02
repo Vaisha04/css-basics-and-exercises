@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transforms MasterClass</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            height: 50px;
+            width: 50px;
+            background-color: beige;
+            border: 2px solid black;
+            /* transform: rotate(40deg); */
+            /* It will rotate box by 40 degree */
+            
+            /* transform: rotate(0.25turn); */
+            /* It will rotate 0.25 turn (90deg) */
+
+            /* transform: rotate(0.5turn); */
+            /* It will rotate 0.5 turn (180deg) */
+
+            /* transform: rotateX(40deg); */
+            /* It will rotate 40deg in X-axis only(3D)
+            It will also rotate single on Y-axis and Z-axis also */
+
+            /* transform: scale(1.6); */
+            /* It will increase 1.6 times */
+
+            /* transform: scaleX(1.6); */
+            /* It will increase 1.6 times only on X-axis
+            It will also increase single on Y-axis and Z-axis */
+
+            /* transform: skew(5deg); */
+            /* It tilts element horizontally or vertically by a specified angle, making it look slanted */
+
+            /* transform: skewY(34deg); */
+            /* Skew can be on X-axis and Y-axis but not on Z-axis */
+
+            /* transform: translate(34%); */
+            /* It translate means move 34% from its originally position */
+
+            /* transform: translateY(34%); */
+             /* It translate means move 34% from its originally position on Y-axis
+             It will also apply on X-axis and Z-axis*/
+
+             /* transform: translateY(100%) skewX(40deg) translateX(45%); */
+             /* We can apply more than one property here like this 
+             We can also give negative value like translateY(-100%) */
+
+             transform: rotate(0.125truns);
+             transform-origin: 20% 30% ;
+             /* It defines the point around which a transformation(like rotate, scale, skew) is applied to an element
+             Here transformation will occur around a point that is 20% from the left and 30% from the top of element
+             It has X-axis (left) and Y-axis (top) */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 100vw;
+            height: 80vh;
+            border: 2px solid purple
+        }
+    </style>
+</head>
+
+<body>
+    <!-- CSS ha two types of Transforms
+     
+    2D Transforms - This property allows the content to be restructured in ways like translate, rotate, scale or skew, etc.
+    As it is 2D, therefore the content is transformed into x and y dimensions.
+     
+    3D Transforms - This property allows the content to be restructured in ways like translate, rotate, scale or skew, etc.
+    As it is 3D, therefore the content is transformed into x, y, and z dimensions.
+    -->
+
+    <div class="container">
+        <div class="box">
+            BOX
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Sizing Units</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 12px;
+        }
+
+        .box {
+            box-sizing: border-box;
+            /* Because of this horizontal scroll bar will be remove */
+            border: 2px solid black;
+            width: 80vw;
+            height: 10vh;
+            margin: auto;
+            /* auto only use for inline elements */
+            /* width: 2048px; */
+            /* Width exceed the monitar resolution(screen size) hence scroll bar appear */
+            background-color: aquamarine;
+        }
+
+        .container {
+            box-sizing: border-box;
+            border: 2px solid black;
+            width: 80vw;
+            /* height: 80vh; */
+            min-height: 80vh;
+            /* It shows minimum height which is 80vh but maximum height will be base on amount of contain means 
+            it is adjustable(height will be increase) 
+            Same with min width also*/
+            margin: 23px auto;
+            font-size: 20px;
+            background-color: aquamarine;
+        }
+
+        .container>div {
+            font-size: 1em;
+            /* If we write 1.5 its font size will be multipy by 1.5 */
+            width: 50%;
+            /* It is 50% of its parent (written content change)*/
+            border: 2px solid red;
+            /* It is 50% of container > div */
+        }
+
+        .container>div>div {
+            border: 2px solid blue;
+            width: 50%;
+            /* It is 50% of container > div > div*/
+        }
+
+        .cont>div {
+            font-size: 1rem;
+            /* If we write 1.5 its font size will be multipy by 1.5 */
+        }
+
+        /* The difference between em and rem is 
+        em is relative to font size of its parent element
+        while rem is relative to the root(html)font size */
+
+        /* Vmin and Vmax
+        If you are in phone Vmin will be width
+        If you are in computer Vmin will be height 
+        If you are in computer Vmax will be width
+        If you are in phone Vmax will be height */
+
+        .mycont {
+            border: 2px solid black;
+            box-sizing: border-box;
+            margin: 23px auto;
+            background-color: red;
+            color: yellow;
+            font-size: 22px;
+            /* width: 100vmin; */
+            width: 80vw;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units-->
+    <div class="box">
+        This is a box
+    </div>
+    <div class="container">
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, quae. Tempora voluptate fugit eligendi ab
+            atque
+            numquam? Voluptatum ex quibusdam, perspiciatis id cum culpa tempora maxime! Amet cupiditate similique ipsa.
+            Eveniet recusandae excepturi quisquam quo facilis animi impedit odit sequi ipsum vel laudantium veritatis,
+            ab
+            culpa cumque aliquam perferendis nam, nesciunt illo itaque provident amet. A!
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus eligendi laboriosam repellat commodi
+            </div>
+        </div>
+    </div>
+    <div class="cont">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, quae. Tempora voluptate fugit eligendi ab atque
+        numquam? Voluptatum ex quibusdam, perspiciatis id cum culpa tempora maxime! Amet cupiditate similique ipsa.
+        Eveniet recusandae excepturi quisquam quo facilis animi impedit odit sequi ipsum vel laudantium veritatis, ab
+        culpa cumque aliquam perferendis nam, nesciunt illo itaque provident amet. A!
+    </div>
+
+
+    <div class="mycont">
+        I am another container
+    </div>
+</body>
+
+</html>

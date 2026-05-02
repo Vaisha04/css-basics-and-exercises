@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specificity</title>
+    <style>
+        /* The specificity of this selector is 1 */
+        h1 {
+            color: aqua;
+        }
+
+        /* The specificity of this selector is 10 */
+        .yellow {
+            color: yellow;
+        }
+
+        /* The specificity of this selector is 10 */
+        .cred {
+            color: red;
+        }
+
+        /* The specificity of this selector is 1(h1)+10(yellow class) = 11 */
+        h1.yellow {
+            color: yellow;
+        }
+
+        /* The specificity of this selector is 10 */
+        .cpurple {
+            color: purple !important;
+        }
+
+        /* The specificity of this selector is 10 */
+        [data-x=a] {
+            /* Attribute Selector */
+            background-color: rgb(231, 152, 152);
+        }
+
+        /* The specificity of this selector is (a element) 1 + (harry rohan class) 10 + 10 + (href attribute) 10 + (hover pseudo) 10 = 41*/
+        a.harryclass.rohan-class[href]:hover {
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 style="color: blue;" class="yellow cred cpurple" data-x="a">CSS Specificity</h1>
+    </div>
+    <!-- Cascade Algorithm
+     1]Postion and order of appearance: For example above all are classes so in that the on who is last will be selected
+     2]Specificity: If there are multiple elements [Inline Style > ID Selectors > Class or Attribute Selector > Element Selector > Universal Selector]
+     3]Origin: If you don't apply style CSS will apply it from a browser extension 
+     4]Importance: If you write important in style it will beacome important to apply -->
+
+    <!-- Specificity Calculator 
+      Universal Selector: 0
+      Element selectors and pseudo elements: 1
+      Class salectors, attribute selectors, pseudo classes:10
+      ID selectors:100
+      Inline styles:1000 -->
+
+    <!-- Higher the specificity value higher chances to apply that style -->
+    <!-- Impotant at the end of a CSS value gets a specificity score of 10000 points -->
+
+    <a href="#" class="harryclass rohan-class">Hover over this link</a>
+
+</body>
+
+</html>

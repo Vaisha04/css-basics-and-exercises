@@ -1,0 +1,103 @@
+<!-- What are CSS Selectors?
+CSS Selectors allow us to choose specific elements and apply styles to them. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+    <style>
+        /* Element Selector */
+        div {
+            /*  background-color /* (Property) */
+            /* : red; */
+            /* (Value) */
+        }
+
+        /* Class Selector */
+        .red {
+            background-color: rgb(248, 161, 161);
+        }
+
+        /* ID Selector */
+        #green {
+            background-color: rgb(157, 250, 157);
+        }
+
+        /* Child Selector */
+        div>p {
+            color: rgb(153, 153, 248);
+            background-color: rgb(102, 61, 61);
+        }
+
+        /* Descendant Selactor */
+        div p {
+            color: rgb(153, 153, 248);
+            background-color: rgb(102, 61, 61);
+        }
+
+        /* Universal(*) Selector (It include all elements)*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Pseudo Selector */
+        a:visited {
+            color: blue;
+        }
+
+        a:link {
+            color: green;
+        }
+
+        a:active {
+            background-color: red;
+        }
+
+        /* a:hover{
+            background-color: aqua;
+        }
+        */
+
+        /* Use it only for first child of tags */
+        p:first-child {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Pseudo Selector code -->
+    <main class="one">
+        <p>I am one</p> <!-- This is a first child of main tag -->
+        <p>I am second</p> <!-- This is a second child of main tag -->
+    </main>
+
+    <div id="green">
+        I am a Div
+        <p>I am para inside div</p>
+    </div>
+
+
+    <!-- Just because here <p> is not inside <div> directly it does not take (div > p) style.
+    because here it is inside (div> article> p). That means it is not direct child. It is its descendent. -->
+    <div id="green">
+        I am a Div
+        <article>
+            <p>I am para inside div</p>
+        </article>
+        <!-- After applying Descendant Selector (div p).The above code can be shown as Child Selector(div > p) -->
+    </div>
+
+    <div class="red">
+        I am a Div
+    </div>
+
+    <a href="https://www.google.com">Go to a Google</a>
+    <a href="https://www.facebook.com">Go to a Facebook</a>
+</body>
+
+</html>

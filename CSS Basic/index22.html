@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS filters</title>
+    <style>
+        .img2 {
+            filter: blur(10px);
+        }
+
+        .img1 {
+            filter: brightness(122%) contrast(200%) invert(1);
+        }
+
+        .img3 {
+            filter: grayscale(90%) sepia(100%)opacity(0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- CSS Filters are used to apply visual effects like blur,brightness,contrast or grayscale to image or elements -->
+    <!-- blur() – Blurs the image to make it look soft or out of focus.
+        brightness() – Increases or decreases the lightness of an element.
+        contrast() – Adjusts the difference between light and dark parts of an image.
+        grayscale() – Converts the image to shades of gray (black and white).
+        sepia() – Adds a brown vintage tone to the image.
+        invert() – Inverts the colors of the image (like a negative).
+        opacity() – Controls the transparency level of an element.
+        drop-shadow() – Adds a shadow behind the element similar to a shadow effect. -->
+        
+    <div class="container">
+        <img src="photo.jpg" width="350px" height="350px" class="img1">
+        <img src="luffy.jpeg" width="350px" height="350px" class="img2">
+        <img src="gojo.jfif" width="350px" height="350px" class="img3">
+    </div>
+</body>
+
+</html>
